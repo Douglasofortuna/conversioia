@@ -125,7 +125,7 @@ const HeroSection = () => {
                       <MessageSquare className="w-4 h-4 text-primary" />
                     </div>
                     <div className="bg-secondary rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
-                      <p className="text-sm">Olá! 👋 Como posso ajudar você hoje?</p>
+                      <p className="text-sm">Olá! 👋 Bem-vinda à Clínica Belezza. Como posso ajudar?</p>
                     </div>
                   </motion.div>
 
@@ -137,7 +137,7 @@ const HeroSection = () => {
                     className="flex justify-end"
                   >
                     <div className="bg-gradient-primary text-primary-foreground rounded-2xl rounded-tr-md px-4 py-3 max-w-[80%]">
-                      <p className="text-sm">Quero saber mais sobre os planos</p>
+                      <p className="text-sm">Oi! Quero agendar um preenchimento labial 💋</p>
                     </div>
                   </motion.div>
 
@@ -153,8 +153,7 @@ const HeroSection = () => {
                     </div>
                     <div className="bg-secondary rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
                       <p className="text-sm">
-                        Perfeito! Temos 3 planos: Start, Pro e Scale. 
-                        Qual volume de conversas você tem por mês? 📊
+                        Ótima escolha! ✨ Temos horários disponíveis amanhã às 14h ou 16h. Qual prefere?
                       </p>
                     </div>
                   </motion.div>
