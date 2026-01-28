@@ -50,11 +50,13 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="heroOutline" size="lg">
-              Ver como funciona
+            <Button variant="heroOutline" size="lg" asChild>
+              <a href="#como-funciona">Ver como funciona</a>
             </Button>
-            <Button variant="hero" size="lg">
-              Testar a Conversio AI
+            <Button variant="hero" size="lg" asChild>
+              <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                Testar a Conversio AI
+              </a>
             </Button>
           </div>
 
@@ -87,11 +89,13 @@ const Header = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4">
-                <Button variant="heroOutline" size="lg">
-                  Ver como funciona
+                <Button variant="heroOutline" size="lg" asChild>
+                  <a href="#como-funciona">Ver como funciona</a>
                 </Button>
-                <Button variant="hero" size="lg">
-                  Testar a Conversio AI
+                <Button variant="hero" size="lg" asChild>
+                  <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                    Testar a Conversio AI
+                  </a>
                 </Button>
               </div>
             </nav>

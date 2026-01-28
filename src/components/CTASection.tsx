@@ -45,9 +45,11 @@ const CTASection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
           >
-            <Button variant="cta" size="xl" className="group">
-              👉 Começar agora com a Conversio AI
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="cta" size="xl" className="group" asChild>
+              <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                👉 Começar agora com a Conversio AI
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </motion.div>
 
