@@ -83,12 +83,14 @@ const HeroSection = () => {
               transition={{ delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Button variant="cta" size="xl" className="group">
-                👉 Testar a Conversio AI
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <Button variant="cta" size="xl" className="group" asChild>
+                <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                  👉 Testar a Conversio AI
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button variant="heroOutline" size="xl">
-                Ver como funciona
+              <Button variant="heroOutline" size="xl" asChild>
+                <a href="#como-funciona">Ver como funciona</a>
               </Button>
             </motion.div>
           </motion.div>
