@@ -53,8 +53,8 @@ const SolutionSection = () => {
               </div>
             </div>
 
-            {/* Connecting lines and features */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Connecting lines and features - hidden on mobile */}
+            <div className="absolute inset-0 hidden lg:flex items-center justify-center">
               <svg className="w-full h-full max-w-[600px] max-h-[400px]" viewBox="0 0 600 400">
                 {/* Lines from center to features */}
                 <line x1="300" y1="200" x2="100" y2="100" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
@@ -70,15 +70,15 @@ const SolutionSection = () => {
               </svg>
             </div>
 
-            {/* Feature cards */}
-            <div className="grid grid-cols-2 gap-8 mt-[-60px] relative z-20">
+            {/* Feature cards - vertical on mobile, grid on desktop */}
+            <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8 mt-8 lg:mt-[-60px] relative z-20">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.5 }}
-                className="flex justify-end"
+                className="flex justify-center lg:justify-end"
               >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 max-w-[200px]">
+                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <MessageSquare className="w-5 h-5 text-primary" />
                   </div>
@@ -91,8 +91,9 @@ const SolutionSection = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.6 }}
+                className="flex justify-center lg:justify-start"
               >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 max-w-[200px]">
+                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Zap className="w-5 h-5 text-primary" />
                   </div>
@@ -105,9 +106,9 @@ const SolutionSection = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.7 }}
-                className="flex justify-end mt-8"
+                className="flex justify-center lg:justify-end lg:mt-8"
               >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 max-w-[200px]">
+                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
                     <Target className="w-5 h-5 text-primary" />
                   </div>
@@ -120,9 +121,9 @@ const SolutionSection = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.8 }}
-                className="mt-8"
+                className="flex justify-center lg:justify-start lg:mt-8"
               >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 max-w-[200px]">
+                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
                   <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mb-3">
                     <Sparkles className="w-5 h-5 text-accent" />
                   </div>
