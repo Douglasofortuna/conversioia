@@ -54,7 +54,7 @@ const Header = () => {
               <a href="#como-funciona">Ver como funciona</a>
             </Button>
             <Button variant="hero" size="lg" asChild>
-              <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5548991902606?text=Olá, vim do site e gostaria de saber mais sobre a ConversioAI." target="_blank" rel="noopener noreferrer">
                 Testar a Conversio AI
               </a>
             </Button>
@@ -93,7 +93,7 @@ const Header = () => {
                   <a href="#como-funciona">Ver como funciona</a>
                 </Button>
                 <Button variant="hero" size="lg" asChild>
-                  <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/5548991902606?text=Olá, vim do site e gostaria de saber mais sobre a ConversioAI." target="_blank" rel="noopener noreferrer">
                     Testar a Conversio AI
                   </a>
                 </Button>

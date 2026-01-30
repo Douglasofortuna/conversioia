@@ -141,9 +141,22 @@ const PricingSection = () => {
                 variant={plan.popular ? "cta" : "heroOutline"}
                 size="lg"
                 className="w-full group"
+                asChild
               >
-                👉 {plan.cta}
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <a 
+                  href={`https://wa.me/5548991902606?text=${encodeURIComponent(
+                    plan.name === "Start" 
+                      ? "Olá, vim do site e gostaria de saber mais sobre o plano Start."
+                      : plan.name === "Pro"
+                      ? "Olá, vim do site e gostaria de saber mais sobre o plano Pro."
+                      : "Olá, vim do site e gostaria de saber mais sobre o plano Scale."
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  👉 {plan.cta}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </motion.div>
           ))}

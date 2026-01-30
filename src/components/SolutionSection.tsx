@@ -6,6 +6,34 @@ const SolutionSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const features = [
+    {
+      icon: MessageSquare,
+      title: "Entende",
+      subtitle: "Contexto e intenção",
+      delay: 0.2,
+    },
+    {
+      icon: Zap,
+      title: "Responde",
+      subtitle: "Em segundos",
+      delay: 0.3,
+    },
+    {
+      icon: Target,
+      title: "Qualifica",
+      subtitle: "Leads com precisão",
+      delay: 0.4,
+    },
+    {
+      icon: Sparkles,
+      title: "Converte",
+      subtitle: "Em resultados",
+      delay: 0.5,
+      isAccent: true,
+    },
+  ];
+
   return (
     <section id="solucao" className="py-20 lg:py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
@@ -18,7 +46,7 @@ const SolutionSection = () => {
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -38,29 +66,29 @@ const SolutionSection = () => {
         </motion.div>
 
         {/* Visual representation */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="max-w-4xl mx-auto"
-        >
-          <div className="relative">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col items-center">
             {/* Central circle */}
-            <div className="relative z-10 w-40 h-40 mx-auto rounded-full bg-gradient-primary flex items-center justify-center shadow-glow">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
+              className="relative z-10 w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-gradient-primary flex items-center justify-center shadow-glow"
+            >
               <div className="text-center text-primary-foreground">
-                <Sparkles className="w-10 h-10 mx-auto mb-2" />
-                <span className="font-bold text-lg">Conversio AI</span>
+                <Sparkles className="w-8 h-8 lg:w-10 lg:h-10 mx-auto mb-1 lg:mb-2" />
+                <span className="font-bold text-sm lg:text-lg">Conversio AI</span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Connecting lines and features - hidden on mobile */}
-            <div className="absolute inset-0 hidden lg:flex items-center justify-center">
-              <svg className="w-full h-full max-w-[600px] max-h-[400px]" viewBox="0 0 600 400">
+            {/* Connecting lines - desktop only */}
+            <div className="hidden lg:block absolute inset-0 pointer-events-none" style={{ top: '50%', transform: 'translateY(-50%)' }}>
+              <svg className="w-full h-[400px] max-w-[600px] mx-auto" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
                 {/* Lines from center to features */}
-                <line x1="300" y1="200" x2="100" y2="100" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-                <line x1="300" y1="200" x2="500" y2="100" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-                <line x1="300" y1="200" x2="100" y2="300" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
-                <line x1="300" y1="200" x2="500" y2="300" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.5" />
+                <line x1="300" y1="80" x2="200" y2="200" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
+                <line x1="300" y1="80" x2="400" y2="200" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
+                <line x1="300" y1="80" x2="200" y2="320" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
+                <line x1="300" y1="80" x2="400" y2="320" stroke="url(#gradient)" strokeWidth="2" strokeDasharray="5,5" opacity="0.4" />
                 <defs>
                   <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="hsl(213, 68%, 48%)" />
@@ -70,70 +98,32 @@ const SolutionSection = () => {
               </svg>
             </div>
 
-            {/* Feature cards - vertical on mobile, grid on desktop */}
-            <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-8 mt-8 lg:mt-[-60px] relative z-20">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.5 }}
-                className="flex justify-center lg:justify-end"
-              >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <MessageSquare className="w-5 h-5 text-primary" />
+            {/* Feature cards - 2x2 grid centered below circle */}
+            <div className="grid grid-cols-2 gap-4 lg:gap-6 mt-8 lg:mt-12 w-full max-w-lg relative z-20">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ 
+                    duration: 0.25, 
+                    delay: feature.delay, 
+                    ease: [0.4, 0, 0.2, 1] 
+                  }}
+                  className="flex justify-center"
+                >
+                  <div className="bg-[#F9FAFB] dark:bg-card rounded-xl shadow-sm border border-border/50 p-4 lg:p-5 w-full transition-shadow duration-200 ease-in-out hover:shadow-md">
+                    <div className={`w-10 h-10 rounded-lg ${feature.isAccent ? 'bg-accent/20' : 'bg-[#3B82F6]/10'} flex items-center justify-center mb-3`}>
+                      <feature.icon className={`w-5 h-5 ${feature.isAccent ? 'text-accent' : 'text-[#3B82F6]'}`} />
+                    </div>
+                    <h3 className="font-semibold text-sm lg:text-base text-foreground">{feature.title}</h3>
+                    <p className="text-xs lg:text-sm text-muted-foreground mt-0.5">{feature.subtitle}</p>
                   </div>
-                  <p className="font-semibold text-sm">Entende</p>
-                  <p className="text-xs text-muted-foreground">Contexto e intenção</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.6 }}
-                className="flex justify-center lg:justify-start"
-              >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <Zap className="w-5 h-5 text-primary" />
-                  </div>
-                  <p className="font-semibold text-sm">Responde</p>
-                  <p className="text-xs text-muted-foreground">Em segundos</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.7 }}
-                className="flex justify-center lg:justify-end lg:mt-8"
-              >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
-                    <Target className="w-5 h-5 text-primary" />
-                  </div>
-                  <p className="font-semibold text-sm">Qualifica</p>
-                  <p className="text-xs text-muted-foreground">Leads com precisão</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: 0.8 }}
-                className="flex justify-center lg:justify-start lg:mt-8"
-              >
-                <div className="bg-card rounded-xl shadow-card border border-border p-5 w-full max-w-[200px]">
-                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center mb-3">
-                    <Sparkles className="w-5 h-5 text-accent" />
-                  </div>
-                  <p className="font-semibold text-sm">Converte</p>
-                  <p className="text-xs text-muted-foreground">Em resultados</p>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
