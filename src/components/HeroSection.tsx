@@ -84,7 +84,7 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button variant="cta" size="xl" className="group" asChild>
-                <a href="https://wa.me/5548991902606" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5548991902606?text=Olá, vim do site e gostaria de saber mais sobre a ConversioAI." target="_blank" rel="noopener noreferrer">
                   👉 Testar a Conversio AI
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
