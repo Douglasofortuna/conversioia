@@ -45,8 +45,7 @@ const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
             >
-              Transforme conversas em{" "}
-              <span className="text-gradient">conversões</span> com IA.
+              Transforme conversas em <span className="text-gradient">conversões</span> com IA.
             </motion.h1>
 
             <motion.p
@@ -55,8 +54,8 @@ const HeroSection = () => {
               transition={{ delay: 0.4 }}
               className="text-lg lg:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              A Conversio AI automatiza atendimento, qualifica leads e acelera vendas 
-              — tudo em um único fluxo inteligente de conversação.
+              A Conversio AI automatiza atendimento, qualifica leads e agenda mais consultas, tudo em um único fluxo
+              inteligente de conversação.
             </motion.p>
 
             {/* Feature bullets */}
@@ -84,7 +83,11 @@ const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <Button variant="cta" size="xl" className="group" asChild>
-                <a href="https://wa.me/5548991902606?text=Olá, vim do site e gostaria de saber mais sobre a ConversioAI." target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/5548991902606?text=Olá, vim do site e gostaria de saber mais sobre a ConversioAI."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   👉 Testar a Conversio AI
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -168,10 +171,19 @@ const HeroSection = () => {
                   transition={{ delay: 2.5 }}
                   className="flex items-center gap-2 mt-4 pt-4 border-t border-border"
                 >
-                <div className="flex gap-1">
-                    <span className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50" style={{ animationDelay: "0ms" }}></span>
-                    <span className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50" style={{ animationDelay: "150ms" }}></span>
-                    <span className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50" style={{ animationDelay: "300ms" }}></span>
+                  <div className="flex gap-1">
+                    <span
+                      className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50"
+                      style={{ animationDelay: "0ms" }}
+                    ></span>
+                    <span
+                      className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50"
+                      style={{ animationDelay: "150ms" }}
+                    ></span>
+                    <span
+                      className="w-2 h-2 bg-primary rounded-full animate-bounce opacity-50"
+                      style={{ animationDelay: "300ms" }}
+                    ></span>
                   </div>
                   <span className="text-xs text-muted-foreground">Qualificando lead...</span>
                 </motion.div>
