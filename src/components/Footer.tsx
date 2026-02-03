@@ -39,7 +39,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Transforme conversas em conversões com IA. Atendimento inteligente que gera resultados.
+              Transforme conversas em consultas com IA. Atendimento inteligente que gera resultados.
             </p>
           </div>
 
