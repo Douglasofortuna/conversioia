@@ -1,39 +1,34 @@
 
-# Plano: Corrigir Layout da Seção Solução no Mobile e desktop
+# Plano: Criar Páginas de Política de Privacidade e Termos de Serviço
 
-## Problema Identificado
+## O que será feito
 
-A seção "Solução" tem um design com um círculo central e 4 cards ao redor. No mobile, esse layout está quebrado porque:
+Criar duas novas páginas legais para o site ConversioAI e atualizar os links no Footer para direcionarem corretamente.
 
-1. O círculo central está sobrepondo os cards
-2. O `margin-top: -60px` nos cards está causando colisão visual
-3. O layout de grid 2 colunas não funciona bem com o círculo centralizado no mobile
+## Páginas a criar
 
-## Solução Proposta
+### 1. Política de Privacidade (`/politica-de-privacidade`)
+- Página completa com conteúdo sobre coleta de dados, uso, armazenamento, cookies, direitos do usuário (LGPD), e contato
+- Header com logo e botão de voltar para a home
+- Layout limpo e legível com tipografia clara
 
-Criar um layout **responsivo** que:
-- **Desktop**: Mantém o design atual com o círculo central e os 4 cards ao redor
-- **Mobile**: Reorganiza para um layout vertical simples (círculo em cima, cards em lista abaixo)
+### 2. Termos de Serviço (`/termos-de-servico`)
+- Página completa com conteúdo sobre condições de uso, responsabilidades, propriedade intelectual, limitações e cancelamento
+- Mesmo layout e estrutura da página de Privacidade
 
 ## Alterações Técnicas
 
-### Arquivo: `src/components/SolutionSection.tsx`
+### Novos arquivos
+- `src/pages/PrivacyPolicy.tsx` -- página de Política de Privacidade
+- `src/pages/TermsOfService.tsx` -- página de Termos de Serviço
 
-1. **Esconder SVG de linhas conectoras no mobile**
-   - Adicionar classes `hidden lg:flex` no container do SVG
+### Arquivos modificados
+- `src/App.tsx` -- adicionar as duas novas rotas (`/politica-de-privacidade` e `/termos-de-servico`)
+- `src/components/Footer.tsx` -- atualizar os links "Privacidade" e "Termos de Uso" de `#` para as novas rotas usando `Link` do React Router
 
-2. **Ajustar o margin-top negativo**
-   - Mudar de `mt-[-60px]` para `mt-8 lg:mt-[-60px]`
-   - Isso evita a sobreposição no mobile
-
-3. **Reorganizar o grid de cards para mobile**
-   - Adicionar `gap-4 lg:gap-8` para reduzir espaçamento no mobile
-   - Ajustar posicionamento dos cards para ficarem centralizados no mobile
-
-4. **Ajustar z-index e posicionamento**
-   - Garantir que o círculo central e os cards não se sobreponham no mobile
-
-## Resultado Esperado
-
-- No **mobile**: Layout vertical limpo com círculo em cima e cards em coluna abaixo
-- No **desktop**: Mantém o layout visual atual com linhas conectoras e cards distribuídos
+## Estilo das páginas
+- Fundo branco, texto escuro com bom contraste
+- Header simples com logo ConversioAI e link para voltar
+- Conteúdo organizado em seções com H2 para cada tópico
+- Footer reutilizado da página principal
+- Design responsivo (mobile e desktop)
