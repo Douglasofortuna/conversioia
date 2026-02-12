@@ -1,4 +1,5 @@
 import { ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import logoConversio from "@/assets/logo-conversio.png";
 
 const Footer = () => {
@@ -21,8 +22,8 @@ const Footer = () => {
       { label: "Status", href: "#" },
     ],
     legal: [
-      { label: "Privacidade", href: "#" },
-      { label: "Termos de Uso", href: "#" },
+      { label: "Privacidade", href: "/politica-de-privacidade", isRoute: true },
+      { label: "Termos de Uso", href: "/termos-de-servico", isRoute: true },
     ],
   };
 
@@ -88,9 +89,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {links.legal.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  <Link to={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
